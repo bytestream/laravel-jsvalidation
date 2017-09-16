@@ -104,7 +104,7 @@ class ValidatorHandler
             list($jsAttribute, $jsRule, $jsParams) = $this->rules->getRule($attribute, $rule, $parameters, $rawRule);
             if ($this->isValidatable($jsRule, $includeRemote)) {
                 $jsRules[$jsAttribute][$jsRule][] = array($rule, $jsParams,
-                    $this->messages->getMessage($attribute, $rule, $parameters),
+                    e($this->messages->getMessage($attribute, $rule, $parameters)), // Escape text
                     $this->validator->isImplicit($rule),
                 );
             }

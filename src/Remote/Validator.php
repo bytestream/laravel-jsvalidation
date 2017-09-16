@@ -97,7 +97,14 @@ class Validator
             return true;
         }
 
-        return $validator->messages()->get($attribute);
+        $messages = $validator->messages()->get($attribute);
+
+        // Escape all messages
+        foreach ($messages as $key => $value) {
+            $messages[$key] = e($value);
+        }
+
+        return $messages;
     }
 
     /**
