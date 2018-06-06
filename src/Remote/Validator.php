@@ -26,13 +26,22 @@ class Validator
     protected $validator;
 
     /**
+     * Whether to escape validation messages.
+     *
+     * @var bool
+     */
+    protected $escape;
+
+    /**
      * RemoteValidator constructor.
      *
      * @param \Illuminate\Validation\Validator $validator
+     * @param bool $escape
      */
-    public function __construct(BaseValidator $validator)
+    public function __construct(BaseValidator $validator, $escape = false)
     {
         $this->validator = $validator;
+        $this->escape = $escape;
     }
 
     /**
@@ -120,7 +129,15 @@ class Validator
             return true;
         }
 
-        return $validator->messages()->get($attribute);
+        $messages = $validator->messages()->get($attribute);
+
+        if ($this->escape) {
+            foreach ($messages as $key => $value) {
+                $messages[$key] = e($value);
+            }
+        }
+
+        return $messages;
     }
 
     /**
