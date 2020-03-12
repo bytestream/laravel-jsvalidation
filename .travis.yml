@@ -3,17 +3,11 @@ language: php
 sudo: false
 
 php:
-  - 7.0
-  - 7.1
   - 7.2
   - 7.3
-
-env:
-  matrix:
-  - LARAVEL=5.5
+  - 7.4
 
 before_script:
-  - export COMPOSER=tests/composer-$LARAVEL.json
   - travis_retry composer install --no-interaction --prefer-source
 
 script:

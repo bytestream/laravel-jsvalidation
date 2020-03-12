@@ -8,7 +8,7 @@ class RuleListTraitTest extends TestCase
 {
     private $mockTrait;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockTrait = $this->getMockForTrait(\Proengsoft\JsValidation\Support\RuleListTrait::class);
     }

@@ -8,7 +8,7 @@ class JavascriptRulesTraitTest extends TestCase
 {
     protected $mockTrait;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockTrait = $this->getMockForTrait(\Proengsoft\JsValidation\Javascript\JavascriptRulesTrait::class);
 

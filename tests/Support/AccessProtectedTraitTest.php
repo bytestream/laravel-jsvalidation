@@ -19,7 +19,7 @@ class AccessProtectedTraitTest extends TestCase
     private $mockTrait;
     private $stubInstance;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockTrait = $this->getMockForTrait(\Proengsoft\JsValidation\Support\AccessProtectedTrait::class);
         $this->stubInstance = new ProtectedClassStubTest();
