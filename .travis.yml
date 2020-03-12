@@ -7,12 +7,7 @@ php:
   - 7.3
   - 7.4
 
-env:
-  matrix:
-  - LARAVEL=5.5
-
 before_script:
-  - export COMPOSER=tests/composer-$LARAVEL.json
   - travis_retry composer install --no-interaction --prefer-source
 
 script:
