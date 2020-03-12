@@ -11,7 +11,7 @@ use Proengsoft\JsValidation\Javascript\ValidatorHandler;
 
 class JavascriptValidatorTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
 
     }

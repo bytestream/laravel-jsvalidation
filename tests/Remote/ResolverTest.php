@@ -10,7 +10,7 @@ require_once __DIR__.'/../stubs/ResolverTest.php';
 
 class ResolverTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockFactory = $this->getMockBuilder(\Illuminate\Validation\Factory::class)
             ->disableOriginalConstructor()
